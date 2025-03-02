@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda de Coches</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Busqueda de Coches</h2>
+    <label for="marca">Marca:</label>
+    <select id="marca" onchange="actualizarModelos()">
+        <option value="">Seleccione una marca</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Ford">Ford</option>
+        <option value="BMW">BMW</option>
+        <option value="Audi">Audi</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Honda">Honda</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Peugeot">Peugeot</option>
+        <option value="Renault">Renault</option>
+    </select>
+    
+    <label for="modelo">Modelo:</label>
+    <select id="modelo" onchange="actualizarColores()">
+        <option value="">Seleccione un modelo</option>
+    </select>
+    
+    <label for="color">Color:</label>
+    <select id="color">
+        <option value="">Seleccione un color</option>
+    </select>
+    
+    <script>
+        const datosCoches = {
+            "Toyota": ["Corolla", "Camry", "Rav4"],
+            "Ford": ["Fiesta", "Focus", "Mustang"],
+            "BMW": ["Serie 3", "Serie 5", "X5"],
+            "Audi": ["A3", "A4", "Q5"],
+            "Mercedes": ["Clase A", "Clase C", "Clase E"],
+            "Honda": ["Civic", "Accord", "CR-V"],
+            "Nissan": ["Micra", "Qashqai", "X-Trail"],
+            "Volkswagen": ["Golf", "Polo", "Tiguan"],
+            "Peugeot": ["208", "3008", "5008"],
+            "Renault": ["Clio", "Megane", "Captur"]
+        };
+        
+        const colores = ["Rojo", "Azul", "Negro", "Blanco", "Gris"];
+        
+        function actualizarModelos() {
+            const marca = document.getElementById("marca").value;
+            const modeloSelect = document.getElementById("modelo");
+            modeloSelect.innerHTML = "<option value=''>Seleccione un modelo</option>";
+            
+            if (marca) {
+                datosCoches[marca].forEach(modelo => {
+                    let option = document.createElement("option");
+                    option.value = modelo;
+                    option.textContent = modelo;
+                    modeloSelect.appendChild(option);
+                });
+            }
+        }
+        
+        function actualizarColores() {
+            const colorSelect = document.getElementById("color");
+            colorSelect.innerHTML = "<option value=''>Seleccione un color</option>";
+            
+            colores.forEach(color => {
+                let option = document.createElement("option");
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+        }
+    </script>
+</body>
+</html>
