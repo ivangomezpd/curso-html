@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Facturas</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Listado de Facturas</h2>
+    <table>
+        <tr>
+            <th>Factura</th>
+            <th>Fecha</th>
+            <th>Importe (€)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>15/01/2022</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>26/12/2006</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>15/02/2025</td>
+            <td>300</td>
+        </tr>
+    </table>
+</body>
+</html>
